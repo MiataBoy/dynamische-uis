@@ -13,7 +13,7 @@ while (stopping === false) {
         stopping = true;
     } else {
 
-        if (!(userInput in products) && userInput !== "stop") {
+        if (!userInput in products) {
             alert(`Wij bieden dit product (${userInput}) momenteel niet aan. Excuses voor het ongemak.`)
         } else {
             while (amountNaN === true) {
