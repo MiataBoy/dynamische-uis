@@ -4,7 +4,7 @@ let uitleg = "In een parkeergarage passen 80 auto's op de begane grond en 120 op
 alert(uitleg);
 let gewenste_aantal_autos = prompt("Hoeveel autos wilt u kwijt in de parkeergarage?");
 
-let nodige_verdiepingen = gewenste_aantal_autos > 80 ? Math.ceil((gewenste_aantal_autos - 80)/70) : 0
+let nodige_verdiepingen = gewenste_aantal_autos > 80 ? Math.ceil((gewenste_aantal_autos - 80)/120) : 0
 
 if (gewenste_aantal_autos > 80) {
     antwoord = `Er moet${nodige_verdiepingen > 1 ? 'en' : ''} ${nodige_verdiepingen} verdieping${nodige_verdiepingen > 1 ? 'en' : ''} komen!`;
