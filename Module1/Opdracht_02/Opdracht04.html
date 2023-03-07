@@ -17,17 +17,17 @@
         //Eigen acties
         spaceShip.run(function () {
             // code  start
-            for (paths = 0; paths < 3; paths++) {
+            for (let paths = 0; paths < 3; paths++) {
                 spaceShip.rotateLeft()
                 spaceShip.moveForward()
                 spaceShip.rotateLeft()
-                for (spaces = 0; spaces < 7; spaces++) {
+                for (let spaces = 0; spaces < 7; spaces++) {
                     spaceShip.moveForward()
                 }
                 spaceShip.rotateRight()
                 spaceShip.moveForward()
                 spaceShip.rotateRight()
-                for (spaces = 0; spaces < 7; spaces++) {
+                for (let spaces = 0; spaces < 7; spaces++) {
                     spaceShip.moveForward()
                 }
             }

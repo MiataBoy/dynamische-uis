@@ -19,14 +19,14 @@
             horizontal = 4
             vertical = 5
             // code  start
-            for (x = 0; x < 4; x++) {
+            for (let x = 0; x < 4; x++) {
                 spaceShip.rotateRight()
-                for (i = 0; i < horizontal; i++) {
+                for (let i = 0; i < horizontal; i++) {
                     spaceShip.moveForward()
                 }
                 horizontal--
                 spaceShip.rotateRight()
-                for (i = 0; i < vertical; i++) {
+                for (let i = 0; i < vertical; i++) {
                     spaceShip.moveForward()
                 }
                 vertical--
