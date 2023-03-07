@@ -16,17 +16,16 @@ while (stopping === false) {
         if (!(userInput in products)) {
             alert(`Wij bieden dit product (${userInput}) momenteel niet aan. Excuses voor het ongemak.`)
         } else {
-            while (amountNaN === true) {
-                productAmount = parseInt(prompt(`Hoeveel wilt u van ${userInput}?`))
-
-                console.log(isNaN(productAmount))
-
-                if (!isNaN(productAmount)) {
-                    amountNaN = false
+            function getNumber(message) {
+                while (true) {
+                    let amount = parseInt(prompt(message))
+                    
+                    if (!isNaN(amount)) {
+                        return amount
+                    }
                 }
             }
-
-            amountNaN = true
+            productAmount = getNumber(`Hoeveel wilt u van ${userInput}?`)
 
             Object.keys(receipt).includes(userInput) ? receipt[userInput] += productAmount : receipt[userInput] = productAmount
 

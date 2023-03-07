@@ -6,7 +6,7 @@ let gewenste_aantal_autos = prompt("Hoeveel autos wilt u kwijt in de parkeergara
 
 let nodige_verdiepingen = Math.ceil((gewenste_aantal_autos - 80)/120)
 
-if (gewenste_aantal_autos > 80) {
+if (nodige_verdiepingen > 0) {
     antwoord = `Er moet${nodige_verdiepingen > 1 ? 'en' : ''} ${nodige_verdiepingen} verdieping${nodige_verdiepingen > 1 ? 'en' : ''} komen!`;
 } else {
     antwoord = "Er zijn geen extra verdiepingen nodig. De begane grond is genoeg."
