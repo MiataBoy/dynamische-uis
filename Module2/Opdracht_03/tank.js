@@ -9,10 +9,7 @@ image.style.backgroundPosition = "80px 0px"
 positionleft = parseInt(image.style.left)
 positiontop = parseInt(image.style.top)
 backposition = image.style.backgroundPosition.replace(", ", " ").split(" ")
-console.log("backposition: " + backposition)
 backpositionx = parseInt(backposition[0])
-console.log(backpositionx)
-backpositiony = parseInt(backposition[1])
 
 degdown = "rotate(180deg)"
 degup = "rotate(360deg)"
@@ -20,18 +17,14 @@ degleft = "rotate(270deg)"
 degright = "rotate(90deg)"
 
 function changePosition(direction) {
-
-
     console.log("arrow: " + direction)
-    console.log("Current transform degrees: " + image.style.transform)
-
     switch (direction) {
         case "up":
             image.style.transform = degup
             positiontop -= 10
             backpositionx += 84
             image.style.top = positiontop.toString() + "px";
-            image.style.backgroundPosition = backpositionx.toString() + "px " + backpositiony.toString() + "px";
+            image.style.backgroundPosition = backpositionx.toString() + "px " + "0px";
             console.log(image.style.backgroundPosition)
             return
         case "down":
@@ -39,37 +32,37 @@ function changePosition(direction) {
             positiontop += 10
             backpositionx += 84
             image.style.top = positiontop.toString() + "px";
-            image.style.backgroundPosition = backpositionx.toString() + "px " + backpositiony.toString() + "px";
+            image.style.backgroundPosition = backpositionx.toString() + "px " + "0px";
             return
         case "left":
             image.style.transform = degleft
             positionleft -= 10
             backpositionx += 84
             image.style.left = positionleft.toString() + "px";
-            image.style.backgroundPosition = backpositionx.toString() + "px " + backpositiony.toString() + "px";
+            image.style.backgroundPosition = backpositionx.toString() + "px " + "0px";
             return
         case "right":
             image.style.transform = degright
             positionleft += 10
             backpositionx += 84
             image.style.left = positionleft.toString() + "px";
-            image.style.backgroundPosition = backpositionx.toString() + "px " + backpositiony.toString() + "px";
+            image.style.backgroundPosition = backpositionx.toString() + "px " + "0px";
             return
     }
 }
 
 function checkKey(e) {
-	console.log("key nr = " + e.keyCode);
+    console.log("key nr = " + e.keyCode);
     e = e || window.event;
     if(e.keyCode == 32){
-    	console.log("spacebar");
+        console.log("spacebar");
     } else if (e.keyCode == '38') {  // up arrow
         changePosition("up")
     } else if (e.keyCode == '40') { // down arrow
         changePosition("down")
     } else if (e.keyCode == '37') { // left arrow
-    	changePosition("left")
+        changePosition("left")
     } else if (e.keyCode == '39') {   // right arrow
-    	changePosition("right")
+        changePosition("right")
     }
 }
