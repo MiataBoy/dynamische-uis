@@ -4,18 +4,23 @@ document.onkeydown = checkKey;
 image.style.transform = "rotate(90deg)"
 image.style.left = "0px"
 image.style.top = "0px"
-image.style.backgroundPosition = `80px 0px`;
+image.style.backgroundPosition = "80px 0px"
+
+positionleft = parseInt(image.style.left)
+positiontop = parseInt(image.style.top)
+backposition = image.style.backgroundPosition.replace(", ", " ").split(" ")
+console.log("backposition: " + backposition)
+backpositionx = parseInt(backposition[0])
+console.log(backpositionx)
+backpositiony = parseInt(backposition[1])
+
+degdown = "rotate(180deg)"
+degup = "rotate(360deg)"
+degleft = "rotate(270deg)"
+degright = "rotate(90deg)"
 
 function changePosition(direction) {
-    positionleft = parseInt(image.style.left)
-    positiontop = parseInt(image.style.top)
-    backposition = image.style.backgroundPosition.split(" ")[0]
 
-
-    degdown = "rotate(180deg)"
-    degup = "rotate(360deg)"
-    degleft = "rotate(270deg)"
-    degright = "rotate(90deg)"
 
     console.log("arrow: " + direction)
     console.log("Current transform degrees: " + image.style.transform)
@@ -24,24 +29,31 @@ function changePosition(direction) {
         case "up":
             image.style.transform = degup
             positiontop -= 10
-            backposition += 10
+            backpositionx += 84
             image.style.top = positiontop.toString() + "px";
-            image.style.backgroundPosition = `${backposition}px -0px`;
+            image.style.backgroundPosition = backpositionx.toString() + "px " + backpositiony.toString() + "px";
+            console.log(image.style.backgroundPosition)
             return
         case "down":
             image.style.transform = degdown
             positiontop += 10
+            backpositionx += 84
             image.style.top = positiontop.toString() + "px";
+            image.style.backgroundPosition = backpositionx.toString() + "px " + backpositiony.toString() + "px";
             return
         case "left":
             image.style.transform = degleft
             positionleft -= 10
+            backpositionx += 84
             image.style.left = positionleft.toString() + "px";
+            image.style.backgroundPosition = backpositionx.toString() + "px " + backpositiony.toString() + "px";
             return
         case "right":
             image.style.transform = degright
             positionleft += 10
+            backpositionx += 84
             image.style.left = positionleft.toString() + "px";
+            image.style.backgroundPosition = backpositionx.toString() + "px " + backpositiony.toString() + "px";
             return
     }
 }
