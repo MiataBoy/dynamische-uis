@@ -1,0 +1,18 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	overflow: hidden;
+	height: 100%;
+}
+
+#image {
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	background: url('tank.png') 80px 0px;
+	transition: transform;
+	transition-duration: 100ms;
+}
