@@ -4,4 +4,3 @@ function buttonFilter(buttonInt) {
     let text = document.getElementById(`button${buttonInt}`).innerText;
     document.getElementById(`button${buttonInt}`).innerText = parseInt(text) + 1
 }
-

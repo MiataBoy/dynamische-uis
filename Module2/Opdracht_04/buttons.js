@@ -1,7 +1,5 @@
 let MAX = 50
 
-console.log("running this dumb script")
-
 for (let buttons = 1; buttons < MAX+1; buttons++) {
     var button = document.createElement("BUTTON");
     button.id = buttons
@@ -27,7 +25,4 @@ function changeColour(buttonID) {
     } else if (!button.classList.contains("btn-2")) {
         button.classList.add("btn-2")
     }
-
-
-
 }
